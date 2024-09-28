@@ -1,0 +1,43 @@
+@import "styles.css";
+
+.single-star-container {
+    margin-top: 5rem;
+    width: inherit;
+    height: auto; 
+    padding: 1rem;
+}
+
+.single-star-wrapper {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 2rem;
+}
+
+#star-info {
+    width: 560px;
+    height: 320px;
+    padding: 1rem 1.5rem;
+    margin-right: 1rem;
+    background: var(--secondary-100);   
+    border-radius: 10px;
+}
+
+#star-info h3 {
+    font-size: 24px;
+    color: var(--text-500);
+}
+
+#star-info p {
+    font-size: 18px;
+}
+
+#star-movies-info {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    background: var(--secondary-50)
+}
+
+#star-movies-info h3 {
+    color: var(--text-500);
+}

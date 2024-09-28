@@ -1,0 +1,100 @@
+@import "styles.css";
+@import "se-bar.css";
+@import "dropdown.css";
+
+
+.greetings {
+    color: var(--primary);
+    font-size: 56px;
+    margin: 1rem 0;
+}
+
+.container {
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.sub-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caption {
+    color: var(--text);
+}
+
+.browse-genres {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns:  auto auto auto auto auto;
+    gap: 8px;
+}
+
+.browse-genres a {
+    margin: 0.5rem 0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background-color 0.2s ease-out;
+}
+
+.browse-genres a:hover {
+    background: var(--secondary);
+}
+
+.browse-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.browse-title span {
+    display: block;
+    max-width: inherit;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 3px 0;
+    word-wrap:break-word;
+}
+
+.browse-title span a {
+    margin: 0 2px;
+    padding: 3px 4px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.browse-title span a:hover {
+    color: var(--text);
+    background-color: var(--secondary);
+}
+
+.browse-title span p {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding: 3px;
+}
+
+.button-list {
+    display: flex;
+}
+
+#genres-popup-container {
+    visibility: hidden;
+}
+
+#title-popup-container {
+    visibility: hidden;
+}

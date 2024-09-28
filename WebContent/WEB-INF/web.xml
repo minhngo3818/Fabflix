@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>Fabflix</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <resource-ref>
+        <description>MySQL DataSource</description>
+        <res-ref-name>jdbc/moviedbMaster</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    <resource-ref>
+        <description>MySQL DataSource</description>
+        <res-ref-name>jdbc/moviedb</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+
+<!--    DATA SERVLETS -->
+    <servlet>
+        <servlet-name>MovieListServlet</servlet-name>
+        <servlet-class>services.movies.MovieListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MovieListServlet</servlet-name>
+        <url-pattern>/api/movie-list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+            <servlet-name>SearchedMovieListServlet</servlet-name>
+        <servlet-class>services.movies.SearchedMovieListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchedMovieListServlet</servlet-name>
+        <url-pattern>/api/movie-list/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SuggestionMovieListServlet</servlet-name>
+        <servlet-class>services.movies.SuggestionMovieListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SuggestionMovieListServlet</servlet-name>
+        <url-pattern>/api/movie-list/search/suggestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BrowsedMovieListServlet</servlet-name>
+        <servlet-class>services.movies.BrowsedMovieListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BrowsedMovieListServlet</servlet-name>
+        <url-pattern>/api/movie-list/browse</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SingleMovieServlet</servlet-name>
+        <servlet-class>services.movies.SingleMovieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SingleMovieServlet</servlet-name>
+        <url-pattern>/api/single-movie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SingleStarServlet</servlet-name>
+        <servlet-class>services.stars.SingleStarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SingleStarServlet</servlet-name>
+        <url-pattern>/api/single-star</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GenreListServlet</servlet-name>
+        <servlet-class>services.movies.GenreListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenreListServlet</servlet-name>
+        <url-pattern>/api/genre-list</url-pattern>
+    </servlet-mapping>
+
+<!--    Cart Servlets-->
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>services.cart.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/api/cart</url-pattern>
+    </servlet-mapping>
+
+<!--    Payment Servlets-->
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>services.payment.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/api/payment</url-pattern>
+    </servlet-mapping>
+    
+<!--    Sales Servlet-->
+    <servlet>
+        <servlet-name>SalesServlet</servlet-name>
+        <servlet-class>services.sales.SalesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SalesServlet</servlet-name>
+        <url-pattern>/api/sales</url-pattern>
+    </servlet-mapping>
+
+
+<!--    _DASHBOARD SERVLETS -->
+<!--    Metadata Servlet    -->
+    <servlet>
+        <servlet-name>MetadataDbServlet</servlet-name>
+        <servlet-class>services._dashboard.MetadataDbServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MetadataDbServlet</servlet-name>
+        <url-pattern>/_dashboard/api/metadata-db</url-pattern>
+    </servlet-mapping>
+
+<!--    Add Movie Procedure Servlet-->
+    <servlet>
+        <servlet-name>AddMovieDbServlet</servlet-name>
+        <servlet-class>services._dashboard.AddMovieDbServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddMovieDbServlet</servlet-name>
+        <url-pattern>/_dashboard/api/add-movie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddStarDbServlet</servlet-name>
+        <servlet-class>services._dashboard.AddStarDbServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddStarDbServlet</servlet-name>
+        <url-pattern>/_dashboard/api/add-star</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddGenreDbServlet</servlet-name>
+        <servlet-class>services._dashboard.AddGenreDbServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddGenreDbServlet</servlet-name>
+        <url-pattern>/_dashboard/api/add-genre</url-pattern>
+    </servlet-mapping>
+
+
+<!--    AUTHENTICATION SERVLETS -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>services.auth.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/api/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeLoginServlet</servlet-name>
+        <servlet-class>services.auth.EmployeeLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeLoginServlet</servlet-name>
+        <url-pattern>/_dashboard/api/login-employee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>services.auth.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/api/logout</url-pattern>
+        <url-pattern>/_dashboard/api/logout</url-pattern>
+    </servlet-mapping>
+
+<!-- SESSION SERVLET -->
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>services.session.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/api/session</url-pattern>
+    </servlet-mapping>
+
+<!--    Filters -->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>services.auth.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <!-- SECURITY CONSTRAINTS -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>HTTPSorHTTP</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <url-pattern>/resources/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+</web-app>
