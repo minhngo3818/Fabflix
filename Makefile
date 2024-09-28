@@ -34,7 +34,7 @@ sql-viewlog-conf:
 	mysql -u mytestuser -p -se "SHOW VARIABLES" | grep -e log_error -e general_log -e slow_query_log -e datadir
 
 sql-querylog:
-	sudo tail -f /var/lib/mysql/tonysanchez-MS-7C91-slow.log
+	sudo tail -f /var/lib/mysql/andremarkovic-MS-4A73-slow.log
 
 tomcat-deploy:
 	sudo cp ./target/*.war /var/lib/tomcat10/webapps/
